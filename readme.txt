@@ -11,11 +11,15 @@ npm install dotenv
 npm audit fix --force
 
 # Running the tests:
-npx playwright test
-  Runs the end-to-end tests.
+!!!Important note: The test is NOT covering deleting the appointment at the end of the test because the functionality is not working.
+Appointment cannot be deleted(Method not alloweed) so please run the part of the appointment creation test only once or open Calendar for Service 
+and manually move the appointment to another place- the test will then create new appointment in the right place and check the existance in the next steps.
 
 npx playwright test --ui
   Starts the interactive UI mode.
+
+npx playwright test
+  Runs the end-to-end tests.
 
 npx playwright test --project=chromium
   Runs the tests only on Desktop Chrome.
