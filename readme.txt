@@ -1,6 +1,11 @@
 # Integra_Booking_System_AT
 Automation tests in Playwright for Integra Booking System web application.
 
+
+Installing dotenv:
+npm install dotenv
+npm audit fix --force
+
 Inside that directory, you can run several commands:
 
   npx playwright test
