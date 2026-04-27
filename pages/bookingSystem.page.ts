@@ -45,9 +45,9 @@ export class BookingSystem{
     readonly servicePasswordInputField: Locator;
     readonly serviceLoginButton: Locator;
     readonly serviceCalendarTitle: Locator;
-    readonly appointmentFromTestGridCell: Locator;
     readonly serviceDatePickerButton: Locator;
-    readonly datePicker26Day: Locator;
+    readonly datePickDay: Locator;
+    readonly appointmentFromTestGridCell: Locator;
 
     constructor( page: Page ){
         this.page = page;
@@ -94,9 +94,10 @@ export class BookingSystem{
         this.servicePasswordInputField = page.getByTestId('password-input');
         this.serviceLoginButton = page.getByTestId('submit-button').first();
         this.serviceCalendarTitle = page.getByText('- Kalendarz');
+        //TODO: Refactor selector to open the calendar no matter what the day is
+        this.serviceDatePickerButton = page.getByText('Pn 27.042026').first();
+        this.datePickDay = page.getByTitle('niedziela, 3 maj')
         this.appointmentFromTestGridCell = page.getByText('HYUNDAI i40 I Kombi Van (VF) Krystian Szuta 123456789 - Wymiana Silnika');
-        this.serviceDatePickerButton = page.getByText('Pn 20.042026').first();
-        this.datePicker26Day = page.getByRole('link', { name: '26', exact: true });
     }
     async goto(): Promise <void> {
         await this.page.goto("https://tpsprebeta.integra.com.pl/ClientScheduler?pointOfServiceCode=KAM03TEST");

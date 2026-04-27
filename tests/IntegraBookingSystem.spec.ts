@@ -59,7 +59,8 @@ test.describe("Booking an appointment- e2e test", () => {
     await expect(bookingSystem.appointmentSummaryText).toHaveText("Podsumowanie");
     await expect(bookingSystem.summaryTireBalancingText).toHaveText("Wywarzenie opon");
     await expect(bookingSystem.summaryServiceEngineReplacementText).toHaveText("- Wymiana Silnika 2000,00 zł / 3,00");
-    await expect(bookingSystem.summaryAppointmentDateText).toHaveText("11:00 | 26.04.2026 niedziela");
+    //TODO: Refactor the selector to pick the date appropriately
+    await expect(bookingSystem.summaryAppointmentDateText).toHaveText("11:00 | 03.05.2026 niedziela");
     await expect(bookingSystem.nextStepButton).toHaveText("Rezerwuj wizytę");
     await bookingSystem.nextStepButton.click();
     
@@ -78,7 +79,7 @@ test.describe("Booking an appointment- e2e test", () => {
     await bookingSystem.serviceLoginButton.click();
     await expect(bookingSystem.serviceCalendarTitle).toHaveText("- Kalendarz");
     await bookingSystem.serviceDatePickerButton.click();
-    await bookingSystem.datePicker26Day.click();
+    await bookingSystem.datePickDay.click();
     await expect(bookingSystem.appointmentFromTestGridCell).toHaveText("HYUNDAI i40 I Kombi Van (VF) Krystian Szuta 123456789 - Wymiana Silnika");
   });
 });
