@@ -60,7 +60,7 @@ test.describe("Booking an appointment- e2e test", () => {
     await expect(bookingSystem.summaryTireBalancingText).toHaveText("Wywarzenie opon");
     await expect(bookingSystem.summaryServiceEngineReplacementText).toHaveText("- Wymiana Silnika 2000,00 zł / 3,00");
     //TODO: Refactor the selector to pick the date appropriately
-    await expect(bookingSystem.summaryAppointmentDateText).toHaveText("11:00 | 03.05.2026 niedziela");
+    await expect(bookingSystem.summaryAppointmentDateText).toHaveText("08:00 | 03.05.2026 niedziela");
     await expect(bookingSystem.nextStepButton).toHaveText("Rezerwuj wizytę");
     await bookingSystem.nextStepButton.click();
     

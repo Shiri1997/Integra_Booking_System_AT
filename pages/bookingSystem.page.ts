@@ -62,7 +62,7 @@ export class BookingSystem{
         this.calendarButton = page.getByRole('button', { name: 'Kalendarz' });
         this.firstAvailableDateField = page.getByRole('button', { name: 'niedziela' });
         this.pickTimeText = page.getByText('Wybierz godzinę'); 
-        this.timeElevenField = page.getByRole('button', { name: '11:00' });
+        this.timeElevenField = page.getByRole('button', { name: '08:00' });
         this.contactDetailsText = page.locator('.section-title').first();
         this.vehicleDetailsText = page.locator('#pojazd-indywidualny-naglowek');
         this.imagesText = page.locator('#clientSchedulerGalleryCon > .section-title');
